@@ -1,2 +1,2 @@
 print("Hello, World!")
-print("Hi! Noel Mekogue from main")
+print("Hello from both MAIN and FEATURE-2")
