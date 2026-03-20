@@ -75,3 +75,4 @@ All Git operations (commits, branching, and merging) were performed using the Li
 ## Output
 Hello, World!
 Hi! Noel Mekogue
+Hello from both MAIN and FEATURE-2
