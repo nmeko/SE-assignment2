@@ -1,78 +1,52 @@
-# SE-Assignment2: Learning GitHub & Collaboration
+# Git & GitHub Collaboration Workflow
 
-##  Project Overview
-This repository was developed as part of a Software Engineering assignment to gain hands-on experience with **Git version control** and **GitHub collaboration workflows**.
+A software engineering course exercise in team version control. The code is intentionally tiny (`hello.py`) so the focus stays on the workflow: branching, pull requests, code review and resolving a real merge conflict with a partner.
 
-The project focuses on understanding how to manage code changes, work with branches, resolve conflicts, and collaborate effectively using industry-standard tools.
+**Stack:** Python · Git · GitHub · VS Code · Linux terminal
 
----
+## Run it
 
-##  Development Environment
-- **Language:** Python  
-- **Editor:** Visual Studio Code  
-- **Terminal:** Linux Terminal  
-- **Version Control:** Git & GitHub  
+```bash
+python3 hello.py
+```
 
-All Git operations (commits, branching, and merging) were performed using the Linux terminal.
+```text
+Hello, World!
+Hello from both MAIN and FEATURE-2
+```
 
----
+The second line is the result of the merge conflict described below: both branches changed the same line, and the resolution kept a line that credits both.
 
-##  Key Learning Outcomes
+## Workflow
 
-###  Repository Management
-- Initialized a local Git repository  
-- Connected to a remote GitHub repository  
-- Tracked changes using commits  
+```text
+main ──●──────────●─────────●──  (merge)
+        \        /         /
+feature-1 ●─────●         /
+          \              /
+     feature-2 ●────────●       (conflict resolved here)
+```
 
-###  Branching Strategy
-- Created and managed branches:
-  - `main`
-  - `feature-1`
-  - `feature-2`  
-- Used branches to isolate development and safely test features  
+1. **Repository setup:** initialized a local repo, connected it to GitHub, and committed from the terminal.
+2. **Feature branches:** `feature-1` and `feature-2` isolated each change from `main`.
+3. **Pull requests:** every change reached `main` through a PR reviewed by my partner.
+4. **Merge conflict:** both feature branches edited the same line of `hello.py`. I resolved it by hand, removed the `<<<<<<<` / `=======` / `>>>>>>>` markers, re-ran the script, and merged after approval.
 
-###  Pull Requests & Collaboration
-- Opened pull requests to merge feature branches into `main`  
-- Collaborated with a partner through code review  
+## Issues tracked
 
-###  Conflict Resolution
-- Encountered and resolved a merge conflict  
-- Manually removed Git conflict markers and finalized the merge  
+| # | Issue | Resolution |
+|---|-------|------------|
+| 1 | Create the base script | Added `hello.py` on `main` with the initial commit |
+| 2 | Syntax error during development | Found and fixed it, tested locally before committing |
+| 3 | Add a feature on a second branch (conflicting edit) | Resolved the conflict manually; reviewed and merged via PR |
 
----
+## What I practiced
 
-## Issues & Resolutions
+- Git from the command line: `init`, `add`, `commit`, `branch`, `checkout`, `merge`, `push`, `pull`
+- Isolating work on feature branches and keeping `main` releasable
+- Opening, reviewing and merging pull requests
+- Reading and resolving merge conflicts without losing either side's intent
 
-### Issue #1: Initial Script Creation
-- **Description:** Create the base Python script  
-- **Resolution:** Created `hello.py` on the `main` branch and made the initial commit  
+## Author
 
----
-
-### Issue #2: Syntax Error Debugging
-- **Description:** A syntax error occurred during development  
-- **Resolution:** Identified and fixed the error, then tested locally before committing  
-
----
-
-### Issue #3: Merge Conflict & Collaboration
-- **Description:** Add an addition feature or enhancment to the code`  
-- **Resolution:**  
-  -  Peace Edited `hello.py` manually  
-  - Removed conflict markers:
-    ```
-    <<<<<<<
-    =======
-    >>>>>>>
-    ```
-  - Collaborator reviewed and approved the pull request  
-  - Merged successfully into `main`  
-
----
-
-##  Code Evolution
-
-## Output
-- Hello, World!
-- Hi! Noel Mekogue
-- Hello from both MAIN and FEATURE-2
+Noel Mekogue, with a course partner for review and the conflict exercise.
